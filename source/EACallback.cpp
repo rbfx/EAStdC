@@ -7,6 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 
+#if EASTDC_THREADING_SUPPORTED
 #include <EAStdC/internal/Config.h>
 #include <EAStdC/EACallback.h>
 #include <EAStdC/EARandomDistribution.h>
@@ -872,3 +873,4 @@ uint64_t CallbackManager::GetTime()
 
 
 
+#endif

@@ -643,7 +643,7 @@ namespace StdC
 	// You can disable usage of QueryPerformanceCounter below by defining
 	// EASTDC_STOPWATCH_FORCE_CPU_CYCLE_USAGE as 1.
 	// hardcode prototype here so we don't pull in <windows.h>
-	extern "C" __declspec(dllimport) int __stdcall QueryPerformanceCounter(_Out_ union _LARGE_INTEGER *lpPerformanceCount);
+	extern "C" __declspec(dllimport) int __stdcall QueryPerformanceCounter(union _LARGE_INTEGER *lpPerformanceCount);   // Urho3D: _Out_ is not defined on MinGW
 
 	inline uint64_t EA::StdC::Stopwatch::GetStopwatchCycle()
 	{

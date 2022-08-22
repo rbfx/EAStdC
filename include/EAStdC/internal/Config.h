@@ -149,9 +149,13 @@
 // For GCC, see http://gcc.gnu.org/wiki/Visibility
 //
 #ifndef EASTDC_API // If the build file hasn't already defined this to be dllexport...
-	#if EASTDC_DLL 
-		#if defined(_MSC_VER)
-			#define EASTDC_API      __declspec(dllimport)
+	#if EASTDC_DLL
+		#if defined(_WIN32)
+			#if defined(EASTDC_EXPORTS)
+				#define EASTDC_API      __declspec(dllexport)
+			#else
+				#define EASTDC_API      __declspec(dllimport)
+			#endif
 			#define EASTDC_LOCAL
 		#elif defined(__CYGWIN__)
 			#define EASTDC_API      __attribute__((dllimport))

@@ -74,6 +74,7 @@
 #define EASTDC_EACALLBACK_H
 
 
+#if EASTDC_THREADING_SUPPORTED
 #include <EABase/eabase.h>
 #include <EAStdC/internal/Config.h>
 #include <EAStdC/EAStopwatch.h>
@@ -549,6 +550,7 @@ namespace EA
 	#pragma warning(pop)
 #endif
 
+#endif
 
 #endif // Header include guard
 
